@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm")
     `java-test-fixtures`
     id("com.github.gmazzo.buildconfig")
+    idea
 }
 
 sourceSets {
@@ -14,8 +15,12 @@ sourceSets {
     }
     test {
         java.setSrcDirs(listOf("test", "test-gen"))
-        resources.setSrcDirs(listOf("testResources"))
+        resources.setSrcDirs(listOf("testData"))
     }
+}
+
+idea {
+    module.generatedSourceDirs.add(projectDir.resolve("test-gen"))
 }
 
 val annotationsRuntimeClasspath: Configuration by configurations.creating { isTransitive = false }
