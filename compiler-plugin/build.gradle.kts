@@ -86,7 +86,7 @@ val generateTests by tasks.registering(JavaExec::class) {
         .withPropertyName("generatedTests")
 
     classpath = sourceSets.testFixtures.get().runtimeClasspath
-    mainClass.set("org.demiurg906.kotlin.plugin.GenerateTestsKt")
+    mainClass.set("org.jetbrains.kotlin.compiler.plugin.template.GenerateTestsKt")
     workingDir = rootDir
 }
 

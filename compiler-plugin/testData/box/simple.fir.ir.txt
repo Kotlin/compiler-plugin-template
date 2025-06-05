@@ -19,12 +19,12 @@ FILE fqName:foo.bar fileName:/simple.kt
                 CONST String type=kotlin.String value="Fail: "
                 GET_VAR 'val result: kotlin.String declared in foo.bar.box' type=kotlin.String origin=null
 FILE fqName:foo.bar fileName:__GENERATED DECLARATIONS__.kt
-  CLASS GENERATED[org.demiurg906.kotlin.plugin.fir.SimpleClassGenerator.Key] CLASS name:MyClass modality:FINAL visibility:public superTypes:[kotlin.Any]
+  CLASS GENERATED[org.jetbrains.kotlin.compiler.plugin.template.fir.SimpleClassGenerator.Key] CLASS name:MyClass modality:FINAL visibility:public superTypes:[kotlin.Any]
     $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:foo.bar.MyClass
-    CONSTRUCTOR GENERATED[org.demiurg906.kotlin.plugin.fir.SimpleClassGenerator.Key] visibility:public <> () returnType:foo.bar.MyClass
+    CONSTRUCTOR GENERATED[org.jetbrains.kotlin.compiler.plugin.template.fir.SimpleClassGenerator.Key] visibility:public <> () returnType:foo.bar.MyClass
       BLOCK_BODY
         DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
-        INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[org.demiurg906.kotlin.plugin.fir.SimpleClassGenerator.Key] CLASS name:MyClass modality:FINAL visibility:public superTypes:[kotlin.Any]' type=foo.bar.MyClass
+        INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[org.jetbrains.kotlin.compiler.plugin.template.fir.SimpleClassGenerator.Key] CLASS name:MyClass modality:FINAL visibility:public superTypes:[kotlin.Any]' type=foo.bar.MyClass
     FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN <> ($this:kotlin.Any, other:kotlin.Any?) returnType:kotlin.Boolean [fake_override,operator]
       overridden:
         public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
@@ -38,7 +38,7 @@ FILE fqName:foo.bar fileName:__GENERATED DECLARATIONS__.kt
       overridden:
         public open fun toString (): kotlin.String declared in kotlin.Any
       $this: VALUE_PARAMETER name:<this> type:kotlin.Any
-    FUN GENERATED[org.demiurg906.kotlin.plugin.fir.SimpleClassGenerator.Key] name:foo visibility:public modality:FINAL <> ($this:foo.bar.MyClass) returnType:kotlin.String
+    FUN GENERATED[org.jetbrains.kotlin.compiler.plugin.template.fir.SimpleClassGenerator.Key] name:foo visibility:public modality:FINAL <> ($this:foo.bar.MyClass) returnType:kotlin.String
       $this: VALUE_PARAMETER name:<this> type:foo.bar.MyClass
       BLOCK_BODY
         RETURN type=kotlin.Nothing from='public final fun foo (): kotlin.String declared in foo.bar.MyClass'

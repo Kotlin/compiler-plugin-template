@@ -6,6 +6,6 @@ plugins {
 }
 
 allprojects {
-    group = "org.demiurg906.kotlin.plugin"
+    group = "org.jetbrains.kotlin.compiler.plugin.template"
     version = "0.1.0-SNAPSHOT"
 }

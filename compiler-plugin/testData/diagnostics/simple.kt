@@ -2,7 +2,7 @@
 
 package foo.bar
 
-import org.demiurg906.kotlin.plugin.SomeAnnotation
+import org.jetbrains.kotlin.compiler.plugin.template.SomeAnnotation
 
 @SomeAnnotation
 fun test() {
