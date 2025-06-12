@@ -22,10 +22,10 @@ To create a new test, add a new `.kt` file in a [compiler-plugin/testData](compi
 `testData/box` for codegen tests and `testData/diagnostics` for diagnostics tests.
 The generated JUnit 5 test classes will be updated automatically when tests are next run.
 They can be manually updated with the `generateTests` Gradle task as well.
-To aid in running tests, it is recommended to install the [Kotlin Test Data Helper][test-plugin] IntelliJ plugin,
+To aid in running tests, it is recommended to install the [Kotlin Compiler DevKit][test-plugin] IntelliJ plugin,
 which is pre-configured in this repository.
 
 [//]: # (Links)
 
 [test-framework]: https://github.com/JetBrains/kotlin/blob/2.1.20/compiler/test-infrastructure/ReadMe.md
-[test-plugin]: https://github.com/demiurg906/test-data-helper-plugin
+[test-plugin]: https://github.com/JetBrains/kotlin-compiler-devkit
