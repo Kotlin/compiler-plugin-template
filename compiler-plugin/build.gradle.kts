@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.buildconfig)
     alias(libs.plugins.gradle.java.test.fixtures)
+    alias(libs.plugins.node.gradle)
     alias(libs.plugins.gradle.idea)
 }
 
@@ -32,6 +33,7 @@ dependencies {
     testFixturesApi(libs.kotlin.test.junit5)
     testFixturesApi(libs.kotlin.test.framework)
     testFixturesApi(libs.kotlin.compiler)
+    testFixturesRuntimeOnly(libs.junit)
 
     annotationsRuntimeClasspath(project(":plugin-annotations"))
 
@@ -42,6 +44,9 @@ dependencies {
     testArtifacts(libs.kotlin.test)
     testArtifacts(libs.kotlin.script.runtime)
     testArtifacts(libs.kotlin.annotations.jvm)
+
+    testArtifacts(kotlin("stdlib-js"))
+    testArtifacts(kotlin("test-js"))
 }
 
 buildConfig {
@@ -69,6 +74,10 @@ tasks.test {
     setLibraryProperty("org.jetbrains.kotlin.test.kotlin-script-runtime", "kotlin-script-runtime")
     setLibraryProperty("org.jetbrains.kotlin.test.kotlin-annotations-jvm", "kotlin-annotations-jvm")
 
+    setLibraryProperty("org.jetbrains.kotlin.test.kotlin-stdlib-js", "kotlin-stdlib-js")
+    setLibraryProperty("org.jetbrains.kotlin.test.kotlin-test-js", "kotlin-test-js")
+
+    systemProperty("kotlin.js.test.root.out.dir", "${layout.buildDirectory.get().asFile}/js-test-output")
     systemProperty("idea.ignore.disabled.plugins", "true")
     systemProperty("idea.home.path", rootDir)
 }
