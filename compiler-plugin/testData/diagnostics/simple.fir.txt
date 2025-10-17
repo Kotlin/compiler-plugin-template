@@ -5,7 +5,7 @@ FILE: simple.kt
         lval s: R|kotlin/String| = R|foo/bar/MyClass|().R|foo/bar/MyClass.foo|()
         R|<local>/s|.<Unresolved name: inc>#()
     }
-FILE: __GENERATED DECLARATIONS__.kt
+FILE: foo/bar/MyClass.kt
     package foo.bar
 
     public final class MyClass : R|kotlin/Any| {

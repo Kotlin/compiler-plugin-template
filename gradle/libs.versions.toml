@@ -1,18 +1,17 @@
 [versions]
 # https://github.com/JetBrains/kotlin
-kotlin = "2.2.20"
+kotlin = "2.3.0"
 
 # https://github.com/Kotlin/binary-compatibility-validator
 kotlin-binaryCompatibilityValidator = "0.16.3"
-
-# https://github.com/junit-team/junit4
-junit = "4.13.2"
 
 # https://github.com/gmazzo/gradle-buildconfig-plugin
 buildconfig = "5.6.5"
 
 
 [libraries]
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+kotlin-stdlib-jdk8 = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 kotlin-script-runtime = { group = "org.jetbrains.kotlin", name = "kotlin-script-runtime", version.ref = "kotlin" }
 kotlin-test-junit5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5", version.ref = "kotlin" }
@@ -21,8 +20,6 @@ kotlin-annotations-jvm = { group = "org.jetbrains.kotlin", name = "kotlin-annota
 kotlin-compiler = { group = "org.jetbrains.kotlin", name = "kotlin-compiler", version.ref = "kotlin" }
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
 kotlin-gradle-plugin-api  = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin-api", version.ref = "kotlin" }
-
-junit = { module = "junit:junit", version.ref = "junit" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

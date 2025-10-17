@@ -18,7 +18,7 @@ FILE fqName:foo.bar fileName:/simple.kt
               STRING_CONCATENATION type=kotlin.String
                 CONST String type=kotlin.String value="Fail: "
                 GET_VAR 'val result: kotlin.String declared in foo.bar.box' type=kotlin.String origin=null
-FILE fqName:foo.bar fileName:__GENERATED DECLARATIONS__.kt
+FILE fqName:foo.bar fileName:foo/bar/MyClass.kt
   CLASS GENERATED[org.jetbrains.kotlin.compiler.plugin.template.fir.SimpleClassGenerator.Key] CLASS name:MyClass modality:FINAL visibility:public superTypes:[kotlin.Any]
     thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:foo.bar.MyClass
     CONSTRUCTOR GENERATED[org.jetbrains.kotlin.compiler.plugin.template.fir.SimpleClassGenerator.Key] visibility:public returnType:foo.bar.MyClass
