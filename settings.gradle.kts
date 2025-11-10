@@ -14,6 +14,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "compiler-plugin-template"
 
-include("compiler-plugin")
-include("gradle-plugin")
-include("plugin-annotations")
+include("template-compiler-plugin")
+include("template-gradle-plugin")
+include("template-plugin-annotations")

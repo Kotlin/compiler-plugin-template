@@ -1,14 +1,35 @@
 [versions]
+# https://github.com/JetBrains/kotlin
 kotlin = "2.2.20"
-build-config = "5.6.5"
-bcv = "0.16.3"
+
+# https://github.com/Kotlin/binary-compatibility-validator
+kotlin-binaryCompatibilityValidator = "0.16.3"
+
+# https://github.com/junit-team/junit4
 junit = "4.13.2"
 
+# https://github.com/gmazzo/gradle-buildconfig-plugin
+buildconfig = "5.6.5"
+
+
 [libraries]
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
+kotlin-script-runtime = { group = "org.jetbrains.kotlin", name = "kotlin-script-runtime", version.ref = "kotlin" }
+kotlin-test-junit5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5", version.ref = "kotlin" }
+kotlin-test-framework = { group = "org.jetbrains.kotlin", name = "kotlin-compiler-internal-test-framework", version.ref = "kotlin" }
+kotlin-annotations-jvm = { group = "org.jetbrains.kotlin", name = "kotlin-annotations-jvm", version.ref = "kotlin" }
+kotlin-compiler = { group = "org.jetbrains.kotlin", name = "kotlin-compiler", version.ref = "kotlin" }
+kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+kotlin-gradle-plugin-api  = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin-api", version.ref = "kotlin" }
+
 junit = { module = "junit:junit", version.ref = "junit" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-build-config = { id = "com.github.gmazzo.buildconfig", version.ref = "build-config" }
-binary-compatibility-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "bcv" }
+kotlin-binary-compatibility-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "kotlin-binaryCompatibilityValidator"}
+buildconfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildconfig"}
+
+gradle-java-test-fixtures = { id = "java-test-fixtures" }
+gradle-idea = { id = "idea" }
+gradle-plugin = { id = "java-gradle-plugin" }

@@ -1,8 +1,8 @@
 plugins {
-    kotlin("jvm")
-    `java-test-fixtures`
-    id("com.github.gmazzo.buildconfig")
-    idea
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.buildconfig)
+    alias(libs.plugins.gradle.java.test.fixtures)
+    alias(libs.plugins.gradle.idea)
 }
 
 sourceSets {
@@ -26,20 +26,20 @@ idea {
 val annotationsRuntimeClasspath: Configuration by configurations.creating { isTransitive = false }
 
 dependencies {
-    compileOnly(kotlin("compiler"))
+    compileOnly(libs.kotlin.compiler)
 
-    testFixturesApi(kotlin("test-junit5"))
-    testFixturesApi(kotlin("compiler-internal-test-framework"))
-    testFixturesApi(kotlin("compiler"))
+    testFixturesApi(libs.kotlin.test.junit5)
+    testFixturesApi(libs.kotlin.test.framework)
+    testFixturesApi(libs.kotlin.compiler)
 
-    annotationsRuntimeClasspath(project(":plugin-annotations"))
+    annotationsRuntimeClasspath(project(":template-plugin-annotations"))
 
     // Dependencies required to run the internal test framework.
     testRuntimeOnly(libs.junit)
-    testRuntimeOnly(kotlin("reflect"))
-    testRuntimeOnly(kotlin("test"))
-    testRuntimeOnly(kotlin("script-runtime"))
-    testRuntimeOnly(kotlin("annotations-jvm"))
+    testRuntimeOnly(libs.kotlin.reflect)
+    testRuntimeOnly(libs.kotlin.test)
+    testRuntimeOnly(libs.kotlin.script.runtime)
+    testRuntimeOnly(libs.kotlin.annotations.jvm)
 }
 
 buildConfig {

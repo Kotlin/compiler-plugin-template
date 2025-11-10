@@ -6,7 +6,7 @@ import org.jetbrains.kotlin.generators.generateTestGroupSuiteWithJUnit5
 
 fun main() {
     generateTestGroupSuiteWithJUnit5 {
-        testGroup(testDataRoot = "compiler-plugin/testData", testsRoot = "compiler-plugin/test-gen") {
+        testGroup(testDataRoot = "template-compiler-plugin/testData", testsRoot = "template-compiler-plugin/test-gen") {
             testClass<AbstractJvmDiagnosticTest> {
                 model("diagnostics")
             }

@@ -1,7 +1,7 @@
 plugins {
-    kotlin("jvm")
-    id("com.github.gmazzo.buildconfig")
-    id("java-gradle-plugin")
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.buildconfig)
+    alias(libs.plugins.gradle.plugin)
 }
 
 sourceSets {
@@ -16,9 +16,8 @@ sourceSets {
 }
 
 dependencies {
-    implementation(kotlin("gradle-plugin-api"))
-
-    testImplementation(kotlin("test-junit5"))
+    implementation(libs.kotlin.gradle.plugin.api)
+    testImplementation(libs.kotlin.test.junit5)
 }
 
 buildConfig {
@@ -26,12 +25,12 @@ buildConfig {
 
     buildConfigField("String", "KOTLIN_PLUGIN_ID", "\"${rootProject.group}\"")
 
-    val pluginProject = project(":compiler-plugin")
+    val pluginProject = project(":template-compiler-plugin")
     buildConfigField("String", "KOTLIN_PLUGIN_GROUP", "\"${pluginProject.group}\"")
     buildConfigField("String", "KOTLIN_PLUGIN_NAME", "\"${pluginProject.name}\"")
     buildConfigField("String", "KOTLIN_PLUGIN_VERSION", "\"${pluginProject.version}\"")
 
-    val annotationsProject = project(":plugin-annotations")
+    val annotationsProject = project(":template-plugin-annotations")
     buildConfigField(
         type = "String",
         name = "ANNOTATIONS_LIBRARY_COORDINATES",

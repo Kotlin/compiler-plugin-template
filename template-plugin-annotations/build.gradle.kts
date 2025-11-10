@@ -3,8 +3,8 @@
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
-    kotlin("multiplatform")
-    id("org.jetbrains.kotlinx.binary-compatibility-validator")
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.kotlin.binary.compatibility.validator)
 }
 
 kotlin {
