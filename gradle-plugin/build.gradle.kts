@@ -1,7 +1,7 @@
 plugins {
-    kotlin("jvm")
-    id("com.github.gmazzo.buildconfig")
-    id("java-gradle-plugin")
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.buildconfig)
+    alias(libs.plugins.gradle.plugin)
 }
 
 sourceSets {
@@ -16,9 +16,8 @@ sourceSets {
 }
 
 dependencies {
-    implementation(kotlin("gradle-plugin-api"))
-
-    testImplementation(kotlin("test-junit5"))
+    implementation(libs.kotlin.gradle.plugin.api)
+    testImplementation(libs.kotlin.test.junit5)
 }
 
 buildConfig {
