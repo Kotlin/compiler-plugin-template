@@ -1,12 +1,17 @@
 [versions]
 # https://github.com/JetBrains/kotlin
-kotlin = "2.3.0"
+kotlin = "2.3.20-Beta1"
 
 # https://github.com/Kotlin/binary-compatibility-validator
 kotlin-binaryCompatibilityValidator = "0.16.3"
 
+# https://github.com/junit-team/junit4
+junit = "4.13.2"
+
 # https://github.com/gmazzo/gradle-buildconfig-plugin
 buildconfig = "5.6.5"
+
+node-gradle = "7.0.2"
 
 
 [libraries]
@@ -21,11 +26,14 @@ kotlin-compiler = { group = "org.jetbrains.kotlin", name = "kotlin-compiler", ve
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
 kotlin-gradle-plugin-api  = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin-api", version.ref = "kotlin" }
 
+junit = { module = "junit:junit", version.ref = "junit" }
+
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-binary-compatibility-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "kotlin-binaryCompatibilityValidator"}
 buildconfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildconfig"}
+node-gradle = { id = "com.github.node-gradle.node", version.ref = "node-gradle" }
 
 gradle-java-test-fixtures = { id = "java-test-fixtures" }
 gradle-idea = { id = "idea" }
