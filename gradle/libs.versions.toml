@@ -11,6 +11,9 @@ junit = "4.13.2"
 # https://github.com/gmazzo/gradle-buildconfig-plugin
 buildconfig = "5.6.5"
 
+# https://github.com/GradleUp/shadow
+shadow = "9.3.0"
+
 
 [libraries]
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
@@ -33,3 +36,5 @@ buildconfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildconfig
 gradle-java-test-fixtures = { id = "java-test-fixtures" }
 gradle-idea = { id = "idea" }
 gradle-plugin = { id = "java-gradle-plugin" }
+
+gradleup-shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
