@@ -8,6 +8,9 @@ kotlin-binaryCompatibilityValidator = "0.16.3"
 # https://github.com/gmazzo/gradle-buildconfig-plugin
 buildconfig = "5.6.5"
 
+# https://github.com/GradleUp/shadow
+shadow = "9.3.0"
+
 
 [libraries]
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
@@ -30,3 +33,5 @@ buildconfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildconfig
 gradle-java-test-fixtures = { id = "java-test-fixtures" }
 gradle-idea = { id = "idea" }
 gradle-plugin = { id = "java-gradle-plugin" }
+
+gradleup-shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
