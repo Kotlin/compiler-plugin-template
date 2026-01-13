@@ -24,6 +24,7 @@ idea {
 }
 
 val annotationsRuntimeClasspath: Configuration by configurations.creating { isTransitive = false }
+val testArtifacts: Configuration by configurations.creating
 
 dependencies {
     compileOnly(libs.kotlin.compiler)
@@ -35,11 +36,12 @@ dependencies {
     annotationsRuntimeClasspath(project(":plugin-annotations"))
 
     // Dependencies required to run the internal test framework.
-    testRuntimeOnly(libs.junit)
-    testRuntimeOnly(libs.kotlin.reflect)
-    testRuntimeOnly(libs.kotlin.test)
-    testRuntimeOnly(libs.kotlin.script.runtime)
-    testRuntimeOnly(libs.kotlin.annotations.jvm)
+    testArtifacts(libs.kotlin.stdlib)
+    testArtifacts(libs.kotlin.stdlib.jdk8)
+    testArtifacts(libs.kotlin.reflect)
+    testArtifacts(libs.kotlin.test)
+    testArtifacts(libs.kotlin.script.runtime)
+    testArtifacts(libs.kotlin.annotations.jvm)
 }
 
 buildConfig {
@@ -95,10 +97,8 @@ tasks.compileTestKotlin {
 }
 
 fun Test.setLibraryProperty(propName: String, jarName: String) {
-    val path = project.configurations
-        .testRuntimeClasspath.get()
-        .files
-        .find { """$jarName-\d.*jar""".toRegex().matches(it.name) }
+    val path = testArtifacts.files
+        .find { """$jarName-\d.*""".toRegex().matches(it.name) }
         ?.absolutePath
         ?: return
     systemProperty(propName, path)

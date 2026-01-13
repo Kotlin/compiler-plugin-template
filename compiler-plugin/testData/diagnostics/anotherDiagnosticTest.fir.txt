@@ -7,7 +7,7 @@ FILE: foo.kt
     public final fun test(): R|kotlin/Unit| {
         R|foo/takeInt|(Int(10))
     }
-FILE: __GENERATED DECLARATIONS__.kt
+FILE: foo/bar/MyClass.kt
     package foo.bar
 
     public final class MyClass : R|kotlin/Any| {
@@ -24,7 +24,7 @@ FILE: bar.kt
         R|foo/takeInt|(Int(10))
         R|foo/takeInt<Inapplicable(INAPPLICABLE): foo/takeInt>#|(String(Hello))
     }
-FILE: __GENERATED DECLARATIONS__.kt
+FILE: foo/bar/MyClass.kt
     package foo.bar
 
     public final class MyClass : R|kotlin/Any| {
