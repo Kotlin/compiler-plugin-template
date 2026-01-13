@@ -14,11 +14,11 @@ fun TestConfigurationBuilder.configurePlugin() {
 }
 
 private class ExtensionRegistrarConfigurator(testServices: TestServices) : EnvironmentConfigurator(testServices) {
-  private val registrar = SimplePluginComponentRegistrar()
-  override fun CompilerPluginRegistrar.ExtensionStorage.registerCompilerExtensions(
+    private val registrar = SimplePluginComponentRegistrar()
+    override fun CompilerPluginRegistrar.ExtensionStorage.registerCompilerExtensions(
         module: TestModule,
         configuration: CompilerConfiguration
-  ) {
-    with(registrar) { registerExtensions(configuration) }
-  }
+    ) {
+        with(registrar) { registerExtensions(configuration) }
+    }
 }
