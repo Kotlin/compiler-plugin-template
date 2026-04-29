@@ -15,6 +15,10 @@ import java.util.regex.Pattern;
 @TestMetadata("compiler-plugin/testData/box")
 @TestDataPath("$PROJECT_ROOT")
 public class JvmBoxTestGenerated extends AbstractJvmBoxTest {
+  private void run(String fileName) {
+    runTest("compiler-plugin/testData/box/" + fileName);
+  }
+
   @Test
   public void testAllFilesPresentInBox() {
     KtTestUtil.assertAllTestsPresentByMetadataWithExcluded(this.getClass(), new File("compiler-plugin/testData/box"), Pattern.compile("^(.+)\\.kt$"), null, true);
@@ -23,12 +27,12 @@ public class JvmBoxTestGenerated extends AbstractJvmBoxTest {
   @Test
   @TestMetadata("anotherBoxTest.kt")
   public void testAnotherBoxTest() {
-    runTest("compiler-plugin/testData/box/anotherBoxTest.kt");
+    run("anotherBoxTest.kt");
   }
 
   @Test
   @TestMetadata("simple.kt")
   public void testSimple() {
-    runTest("compiler-plugin/testData/box/simple.kt");
+    run("simple.kt");
   }
 }
