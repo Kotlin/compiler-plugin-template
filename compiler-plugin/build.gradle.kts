@@ -16,6 +16,9 @@ plugins {
 
 project.plugins.apply(D8Plugin::class.java)
 
+val testDataDir = layout.projectDirectory.dir("testData")
+val testGenDirectory = layout.buildDirectory.dir("test-gen")
+
 sourceSets {
     main {
         java.setSrcDirs(listOf("src"))
@@ -25,13 +28,14 @@ sourceSets {
         java.setSrcDirs(listOf("test-fixtures"))
     }
     test {
-        java.setSrcDirs(listOf("test", "test-gen"))
-        resources.setSrcDirs(listOf("testData"))
+        java.setSrcDirs(listOf("test", testGenDirectory))
+        resources.setSrcDirs(listOf(testDataDir))
     }
 }
 
 idea {
-    module.generatedSourceDirs.add(projectDir.resolve("test-gen"))
+    // This is needed until IDEA fixes IDEA-339729.
+    module.generatedSourceDirs.add(testGenDirectory.get().asFile)
 }
 
 val testArtifacts: Configuration by configurations.creating
@@ -123,15 +127,21 @@ kotlin {
 }
 
 val generateTests by tasks.registering(JavaExec::class) {
-    inputs.dir(layout.projectDirectory.dir("testData"))
+    inputs.dir(testDataDir)
         .withPropertyName("testData")
         .withPathSensitivity(PathSensitivity.RELATIVE)
-    outputs.dir(layout.projectDirectory.dir("test-gen"))
+    outputs.dir(testGenDirectory)
         .withPropertyName("generatedTests")
 
     classpath = sourceSets.testFixtures.get().runtimeClasspath
     mainClass.set("org.jetbrains.kotlin.compiler.plugin.template.GenerateTestsKt")
     workingDir = rootDir
+    args(
+        listOf(
+            testGenDirectory.get().asFile.absolutePath,
+            testDataDir.asFile.absolutePath,
+        )
+    )
 }
 
 tasks.compileTestKotlin {
