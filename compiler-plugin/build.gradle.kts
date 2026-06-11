@@ -136,12 +136,12 @@ val generateTests by tasks.registering(JavaExec::class) {
     classpath = sourceSets.testFixtures.get().runtimeClasspath
     mainClass.set("org.jetbrains.kotlin.compiler.plugin.template.GenerateTestsKt")
     workingDir = rootDir
-    argumentProviders.add {
+    args(
         listOf(
             testGenDirectory.get().asFile.absolutePath,
             testDataDir.asFile.absolutePath,
         )
-    }
+    )
 }
 
 tasks.compileTestKotlin {
