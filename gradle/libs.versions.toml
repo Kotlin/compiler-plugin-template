@@ -1,6 +1,8 @@
 [versions]
 # https://github.com/JetBrains/kotlin
 kotlin = "2.4.20-dev-7885"
+publish = "0.37.0"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+gradle-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
