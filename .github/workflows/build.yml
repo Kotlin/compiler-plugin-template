@@ -4,6 +4,7 @@ on:
     branches:
       - master
       - devkit
+      - devkit-kmp
 
 env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
