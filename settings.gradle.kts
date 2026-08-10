@@ -2,11 +2,7 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         mavenCentral()
-        maven {
-            name = "devKitSpace"
-            url = uri("https://packages.jetbrains.team/maven/p/compiler-plugin-dev-kit/eap")
-            credentials(PasswordCredentials::class)
-        }
+        maven("https://packages.jetbrains.team/maven/p/compiler-plugin-dev-kit/eap")
         mavenLocal()
     }
 }
@@ -18,11 +14,7 @@ plugins {
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
-        maven {
-            name = "devKitSpace"
-            url = uri("https://packages.jetbrains.team/maven/p/compiler-plugin-dev-kit/eap")
-            credentials(PasswordCredentials::class)
-        }
+        maven("https://packages.jetbrains.team/maven/p/compiler-plugin-dev-kit/eap")
         mavenLocal()
     }
 }
