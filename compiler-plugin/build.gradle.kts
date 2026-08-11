@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.plugin.kotlinToolingVersion
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
     id("com.gradleup.shadow") version "9.6.0"
@@ -6,7 +6,11 @@ plugins {
     alias(libs.plugins.gradle.maven.publish)
 }
 
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
 pluginDevKit {
-    developForWithFixtures(kotlinToolingVersion)
-    developForWithFixtures("2.5.0-dev-498")
+    kotlin {
+        applyPluginDevKitHierarchyTemplate {
+            groupVersions("nonJvm", { true })
+        }
+    }
 }
