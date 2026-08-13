@@ -10,10 +10,8 @@ plugins {
 pluginDevKit {
     kotlin {
         applyPluginDevKitHierarchyTemplate {
-            groupVersions("nonJvm", { true }) {
-                postDev(2, 5, "post25Dev")
-                preDev(2, 5, "pre25Dev")
-            }
+            postDev(2, 5, "post25Dev")
+            preDev(2, 5, "pre25Dev")
         }
     }
 }
