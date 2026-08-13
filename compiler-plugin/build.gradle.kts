@@ -1,7 +1,6 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
-    id("com.gradleup.shadow") version "9.6.0"
     pluginDevKit("compiler-plugin")
     alias(libs.plugins.gradle.maven.publish)
 }
@@ -14,4 +13,6 @@ pluginDevKit {
             preDev(2, 5, "pre25Dev")
         }
     }
+    componentRegistrar = "org.jetbrains.kotlin.compiler.plugin.template.SimplePluginComponentRegistrar"
+    commandLineProcessor = "org.jetbrains.kotlin.compiler.plugin.template.SimpleCommandLineProcessor"
 }
