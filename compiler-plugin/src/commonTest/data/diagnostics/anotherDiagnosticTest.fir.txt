@@ -13,6 +13,8 @@ FILE: foo/bar/MyClass.kt
     public final class MyClass : R|kotlin/Any| {
         public final fun foo(): R|kotlin/String|
 
+        public final fun bar(): R|kotlin/String|
+
         public constructor(): R|foo/bar/MyClass|
 
     }
@@ -29,6 +31,8 @@ FILE: foo/bar/MyClass.kt
 
     public final class MyClass : R|kotlin/Any| {
         public final fun foo(): R|kotlin/String|
+
+        public final fun bar(): R|kotlin/String|
 
         public constructor(): R|foo/bar/MyClass|
 
