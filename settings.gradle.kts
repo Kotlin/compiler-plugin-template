@@ -8,7 +8,7 @@ pluginManagement {
 }
 
 plugins {
-    kotlin("compiler.plugin.devkit") version "0.0.3-dev-23da005"
+    kotlin("compiler.plugin.devkit") version "0.0.3-dev-281e88f"
 }
 
 dependencyResolutionManagement {
