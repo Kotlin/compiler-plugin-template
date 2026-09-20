@@ -11,6 +11,8 @@ plugins {
     kotlin("compiler.plugin.devkit") version "0.0.3-dev-673b653"
 }
 
+pluginDevKit { includeRootBuild("..") }
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
@@ -19,8 +21,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "compiler-plugin-template"
-
-include("compiler-plugin")
-
-include("gradle-plugin")
+rootProject.name = "plugin-annotations"

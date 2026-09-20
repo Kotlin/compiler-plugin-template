@@ -15,6 +15,17 @@ class SimpleSupportPlugin : DevKitSupportPlugin(PluginInfo.PLUGIN_INFO) {
     override fun Project.applyToCompilation(
         kotlinCompilation: KotlinCompilation<*>
     ): Provider<List<SubpluginOption>> {
+        // TODO change to devkit-provided toggle
+        val extension = extensions.getByType(SimpleGradleExtension::class.java)
+        if (!extension.shouldAddRuntimeDependency.get()) {
+            configurations.named(
+                kotlinCompilation.defaultSourceSet.implementationConfigurationName
+            ) {
+                it.exclude(
+                    mapOf("group" to info.artifact.groupId, "module" to "plugin-annotations")
+                )
+            }
+        }
         kotlinCompilation.compileTaskProvider.configure {
             // Run this compiler plugin before Compose plugin.
             it.compilerOptions.freeCompilerArgs.add(

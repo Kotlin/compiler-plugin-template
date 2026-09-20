@@ -3,9 +3,12 @@
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
-    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.kotlin.multiplatform.min)
     alias(libs.plugins.gradle.maven.publish)
+    id("org.jetbrains.kotlin.compiler.plugin.template")
 }
+
+simplePlugin { shouldAddRuntimeDependency = false }
 
 kotlin {
     explicitApi()
@@ -43,5 +46,5 @@ kotlin {
 
     applyDefaultHierarchyTemplate()
 
-    @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class) abiValidation()
+    @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class) abiValidation {}
 }

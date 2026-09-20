@@ -6,6 +6,7 @@ import org.jetbrains.kotlin.fir.FirSession
 import org.jetbrains.kotlin.fir.extensions.ExperimentalTopLevelDeclarationsGenerationApi
 import org.jetbrains.kotlin.fir.extensions.FirDeclarationGenerationExtension
 import org.jetbrains.kotlin.fir.extensions.MemberGenerationContext
+import org.jetbrains.kotlin.fir.moduleData
 import org.jetbrains.kotlin.fir.plugin.createConstructor
 import org.jetbrains.kotlin.fir.plugin.createMemberFunction
 import org.jetbrains.kotlin.fir.plugin.createTopLevelClass
@@ -13,7 +14,11 @@ import org.jetbrains.kotlin.fir.symbols.impl.FirClassLikeSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirClassSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirConstructorSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirNamedFunctionSymbol
-import org.jetbrains.kotlin.name.*
+import org.jetbrains.kotlin.name.CallableId
+import org.jetbrains.kotlin.name.ClassId
+import org.jetbrains.kotlin.name.FqName
+import org.jetbrains.kotlin.name.Name
+import org.jetbrains.kotlin.name.SpecialNames
 
 /*
  * Generates top level class
@@ -83,7 +88,7 @@ class SimpleClassGenerator(session: FirSession) : FirDeclarationGenerationExtens
 
     @ExperimentalTopLevelDeclarationsGenerationApi
     override fun getTopLevelClassIds(): Set<ClassId> {
-        return setOf(MY_CLASS_ID)
+        return if (session.moduleData.isCommon) setOf() else setOf(MY_CLASS_ID)
     }
 
     override fun hasPackage(packageFqName: FqName): Boolean {
