@@ -1,6 +1,6 @@
 [versions]
 # https://github.com/JetBrains/kotlin
-kotlin = "2.4.20"
+kotlin = "2.5.0-Beta1"
 
 # https://github.com/junit-team/junit4
 junit = "4.13.2"
