@@ -7,7 +7,6 @@ import org.jetbrains.kotlin.ir.declarations.IrConstructor
 import org.jetbrains.kotlin.ir.declarations.IrSimpleFunction
 import org.jetbrains.kotlin.ir.declarations.createBlockBody
 import org.jetbrains.kotlin.ir.expressions.IrBody
-import org.jetbrains.kotlin.ir.expressions.IrConstKind
 import org.jetbrains.kotlin.ir.expressions.impl.IrConstImpl
 import org.jetbrains.kotlin.ir.expressions.impl.IrReturnImpl
 
@@ -18,7 +17,7 @@ class SimpleIrBodyGenerator(pluginContext: IrPluginContext) : AbstractTransforme
 
     override fun generateBodyForFunction(function: IrSimpleFunction, key: GeneratedDeclarationKey?): IrBody {
         require(function.name == SimpleClassGenerator.FOO_ID.callableName)
-        val const = IrConstImpl(-1, -1, irBuiltIns.stringType, IrConstKind.String, value = "Hello world")
+        val const = IrConstImpl.string(-1, -1, irBuiltIns.stringType, value = "Hello world")
         val returnStatement = IrReturnImpl(-1, -1, irBuiltIns.nothingType, function.symbol, const)
         return irFactory.createBlockBody(-1, -1, listOf(returnStatement))
     }
