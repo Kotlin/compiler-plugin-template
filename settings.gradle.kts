@@ -8,8 +8,10 @@ pluginManagement {
 }
 
 plugins {
-    kotlin("compiler.plugin.devkit") version "0.0.3-dev-673b653"
+    kotlin("compiler.plugin.devkit") version "0.0.3-dev-3be1ae3"
 }
+
+pluginDevKit { includeCompanionBuild("gradle-plugin") }
 
 dependencyResolutionManagement {
     repositories {
@@ -23,4 +25,6 @@ rootProject.name = "compiler-plugin-template"
 
 include("compiler-plugin")
 
-include("gradle-plugin")
+include("gradle-plugin-test")
+
+includeBuild(".")

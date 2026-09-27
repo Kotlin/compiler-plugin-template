@@ -1,5 +1,4 @@
 pluginManagement {
-    includeBuild("../gradle-plugin")
     repositories {
         gradlePluginPortal()
         mavenCentral()
@@ -22,4 +21,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "plugin-annotations"
+rootProject.name = "gradle-plugin"

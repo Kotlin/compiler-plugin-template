@@ -1,4 +1,5 @@
 plugins {
+    alias(libs.plugins.kotlin.multiplatform) apply false
     pluginDevKit("gradle-plugin")
 }
 
