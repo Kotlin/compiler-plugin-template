@@ -1,24 +1,12 @@
 pluginManagement {
+    includeBuild("../build-logic")
     repositories {
         gradlePluginPortal()
         mavenCentral()
         maven("https://packages.jetbrains.team/maven/p/compiler-plugin-dev-kit/eap")
-        mavenLocal()
     }
 }
 
-plugins {
-    kotlin("compiler.plugin.devkit") version "0.0.3-dev-3be1ae3"
-}
-
-pluginDevKit { createVersionCatalogFrom("..") }
-
-dependencyResolutionManagement {
-    repositories {
-        mavenCentral()
-        maven("https://packages.jetbrains.team/maven/p/compiler-plugin-dev-kit/eap")
-        mavenLocal()
-    }
-}
+plugins { id("devkit-included") }
 
 rootProject.name = "gradle-plugin"
