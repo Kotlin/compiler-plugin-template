@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin.compiler.plugin.devkit:settings:0.0.3-dev-e481356")
+    implementation(libs.devkit.settings)
 }

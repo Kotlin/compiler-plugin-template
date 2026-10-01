@@ -3,8 +3,12 @@
 kotlin = "2.4.20"
 kotlinMin = "2.3.21"
 publish = "0.37.0"
+devkit = "0.0.3-dev-abac9af"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-multiplatform-min = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlinMin" }
 gradle-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
+
+[libraries]
+devkit-settings = { module = "org.jetbrains.kotlin.compiler.plugin.devkit:settings", version.ref = "devkit" }
