@@ -12,3 +12,4 @@ gradle-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "pub
 
 [libraries]
 devkit-settings = { module = "org.jetbrains.kotlin.compiler.plugin.devkit:settings", version.ref = "devkit" }
+devkit-plugins = { module = "org.jetbrains.kotlin.compiler.plugin.devkit:plugins", version.ref = "devkit" }

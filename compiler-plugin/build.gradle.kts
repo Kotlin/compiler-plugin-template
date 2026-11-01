@@ -1,5 +1,5 @@
 plugins {
-    pluginDevKit("compiler-plugin")
+    id("devkit.compiler")
     alias(libs.plugins.gradle.maven.publish)
 }
 
@@ -11,4 +11,5 @@ pluginDevKit {
         "org.jetbrains.kotlin.compiler.plugin.template.SimplePluginComponentRegistrar"
     commandLineProcessor =
         "org.jetbrains.kotlin.compiler.plugin.template.SimpleCommandLineProcessor"
+    companionLibrary("./plugin-annotations")
 }

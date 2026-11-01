@@ -1,10 +1,11 @@
 import org.jetbrains.kotlin.compiler.plugin.devkit.ProjectOrGav
 
 plugins {
-    pluginDevKit("gradle-plugin")
+    id("devkit.gradle")
 }
 
 pluginDevKit {
     includedBuildProjects.add("gradle-plugin")
+    companionLibrary("./plugin-annotations")
     compilerPlugin = ProjectOrGav.LocalProject(project(":compiler-plugin").isolated)
 }

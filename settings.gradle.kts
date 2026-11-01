@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("./build-logic-settings")
     includeBuild("./build-logic")
     repositories {
         gradlePluginPortal()
@@ -11,7 +12,7 @@ plugins { id("devkit") }
 
 pluginDevKit {
     includeBuildWithChecks("gradle-plugin")
-    includeCompanionBuild("plugin-annotations")
+    includeBuildWithChecks("plugin-annotations")
 }
 
 rootProject.name = "compiler-plugin-template"
