@@ -3,7 +3,7 @@
 kotlin = "2.4.20"
 kotlinMin = "2.3.21"
 publish = "0.37.0"
-devkit = "0.0.4-dev-324"
+devkit = "0.0.4-dev-334"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
