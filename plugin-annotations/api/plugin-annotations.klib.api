@@ -9,3 +9,9 @@
 open annotation class org.jetbrains.kotlin.compiler.plugin.template/SomeAnnotation : kotlin/Annotation { // org.jetbrains.kotlin.compiler.plugin.template/SomeAnnotation|null[0]
     constructor <init>() // org.jetbrains.kotlin.compiler.plugin.template/SomeAnnotation.<init>|<init>(){}[0]
 }
+
+final class foo.bar/MyClass { // foo.bar/MyClass|null[0]
+    constructor <init>() // foo.bar/MyClass.<init>|<init>(){}[0]
+
+    final fun foo(): kotlin/String // foo.bar/MyClass.foo|foo(){}[0]
+}

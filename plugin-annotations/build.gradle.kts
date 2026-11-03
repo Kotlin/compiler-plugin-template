@@ -46,5 +46,5 @@ kotlin {
 
     applyDefaultHierarchyTemplate()
 
-    @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class) abiValidation {}
+    @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class) abiValidation { enabled = true }
 }
