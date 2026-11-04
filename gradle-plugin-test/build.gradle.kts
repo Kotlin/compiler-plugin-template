@@ -4,8 +4,11 @@ plugins {
     id("devkit.gradle")
 }
 
+gradleTestKitSupport {
+    withIncludedBuildProjects(":gradle-plugin:")
+}
+
 pluginDevKit {
-    includedBuildProjects.add("gradle-plugin")
-    companionLibrary("./plugin-annotations")
+    companionLibrary("plugin-annotations")
     compilerPlugin = ProjectOrGav.LocalProject(project(":compiler-plugin").isolated)
 }

@@ -11,5 +11,5 @@ pluginDevKit {
         "org.jetbrains.kotlin.compiler.plugin.template.SimplePluginComponentRegistrar"
     commandLineProcessor =
         "org.jetbrains.kotlin.compiler.plugin.template.SimpleCommandLineProcessor"
-    companionLibrary("./plugin-annotations")
+    companionLibrary("plugin-annotations")
 }
