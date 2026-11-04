@@ -4,8 +4,8 @@ plugins {
     id("devkit.gradle")
 }
 
-gradleTestKitSupport {
-    withIncludedBuildProjects(":gradle-plugin:")
+dependencies {
+    functionalTestRuntimeOnly("$group:gradle-plugin:$version")
 }
 
 pluginDevKit {
