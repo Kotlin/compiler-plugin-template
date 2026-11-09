@@ -2,6 +2,7 @@ package org.jetbrains.kotlin.compiler.plugin.template.fir
 
 import org.jetbrains.kotlin.GeneratedDeclarationKey
 import org.jetbrains.kotlin.compiler.plugin.template.generateBar
+import org.jetbrains.kotlin.compiler.plugin.template.isTopLevelGenerationSupportedInKlib
 import org.jetbrains.kotlin.fir.FirSession
 import org.jetbrains.kotlin.fir.extensions.ExperimentalTopLevelDeclarationsGenerationApi
 import org.jetbrains.kotlin.fir.extensions.FirDeclarationGenerationExtension
@@ -19,6 +20,7 @@ import org.jetbrains.kotlin.name.ClassId
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.name.Name
 import org.jetbrains.kotlin.name.SpecialNames
+import org.jetbrains.kotlin.platform.jvm.isJvm
 
 /*
  * Generates top level class
@@ -88,7 +90,12 @@ class SimpleClassGenerator(session: FirSession) : FirDeclarationGenerationExtens
 
     @ExperimentalTopLevelDeclarationsGenerationApi
     override fun getTopLevelClassIds(): Set<ClassId> {
-        return if (session.moduleData.isCommon) setOf() else setOf(MY_CLASS_ID)
+        return if (
+            session.moduleData.isCommon ||
+                (!session.moduleData.platform.isJvm() && !isTopLevelGenerationSupportedInKlib)
+        )
+            setOf()
+        else setOf(MY_CLASS_ID)
     }
 
     override fun hasPackage(packageFqName: FqName): Boolean {

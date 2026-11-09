@@ -1,8 +1,6 @@
 package org.jetbrains.kotlin.compiler.plugin.template.runners
 
 import org.jetbrains.kotlin.compiler.plugin.devkit.runners.DevKitJvmBoxTest
-import org.jetbrains.kotlin.compiler.plugin.devkit.services.configurePlugin
-import org.jetbrains.kotlin.compiler.plugin.template.SimplePluginComponentRegistrar
+import org.jetbrains.kotlin.compiler.plugin.template.configureTests
 
-open class AbstractJvmBoxTest :
-    DevKitJvmBoxTest({ configurePlugin(SimplePluginComponentRegistrar()) })
+open class AbstractJvmBoxTest : DevKitJvmBoxTest({ configureTests() })

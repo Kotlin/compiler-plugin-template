@@ -23,4 +23,11 @@ open class SimpleProject(multiplatform: Boolean = false) :
     override fun repositories(defaults: List<Repository>): Repositories {
         return super.repositories(defaults + Repository.MAVEN_LOCAL)
     }
+
+    override fun StringBuilder.onBuildScript() {
+        appendLine("java { targetCompatibility = JavaVersion.VERSION_1_8 }")
+        appendLine(
+            "kotlin { compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8 } }"
+        )
+    }
 }

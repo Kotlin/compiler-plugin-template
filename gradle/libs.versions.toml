@@ -1,9 +1,9 @@
 [versions]
 # https://github.com/JetBrains/kotlin
 kotlin = "2.4.20"
-kotlinMin = "2.3.21"
+kotlinMin = "2.2.20"
 publish = "0.37.0"
-devkit = "0.0.4-dev-345"
+devkit = "0.0.4-dev-374"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
